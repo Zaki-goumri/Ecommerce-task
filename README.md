@@ -22,6 +22,7 @@ docker compose up --build
 
 ## API Endpoints
 
+
 ### Get All Products
 ```
 GET /products
@@ -70,6 +71,8 @@ curl -X POST http://localhost:5000/products \
   -d '{"title":"Hat","image":"https://...","price":29.99,"stock":15,"category":"Apparel"}'
 ```
 
+there is other api endpoints not required you can check them 
+
 ## API Documentation
 Swagger UI available at `/api-docs` (after dependency install).
 
@@ -77,3 +80,4 @@ Swagger UI available at `/api-docs` (after dependency install).
 - Redis is used for caching product queries and single product lookups.
 - MongoDB is used for persistent product storage.
 - See `src/services/productService.ts` for caching logic.
+- check `src/docs` for more details
