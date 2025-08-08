@@ -1,0 +1,33 @@
+@startuml
+entity User {
+  * _id : ObjectId
+  * firstName : string
+  * lastName : string
+  * email : string
+  * password : string
+}
+
+entity Product {
+  * _id : ObjectId
+  * title : string
+  * image : string
+  * price : number
+  * stock : number
+  * category : string
+}
+
+entity Cart {
+  * _id : ObjectId
+  * userId : ObjectId
+  * items : [CartItem]
+}
+
+entity CartItem {
+  * productId : ObjectId
+  * quantity : number
+}
+
+User ||--o{ Cart : owns
+Cart ||--|{ CartItem : contains
+Product ||--o{ CartItem : referenced
+@enduml
